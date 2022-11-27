@@ -1,9 +1,16 @@
-// search
+//weather
 
 function showWeather(response) {
   let h1 = document.querySelector("h1");
+  let temperatureElement = document.querySelector("#current-temp");
+
+  celsiusTemperature = response.data.temperature.current;
+
   h1.innerHTML = response.data.city;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+// search
 
 function search(event) {
   event.preventDefault();
@@ -14,6 +21,8 @@ function search(event) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput.value}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
+
+// form
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
