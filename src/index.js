@@ -40,7 +40,7 @@ function showFahrenheitTemperature(event) {
   fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#degrees");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 let celsiusTemperature = null;
