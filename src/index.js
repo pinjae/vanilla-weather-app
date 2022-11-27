@@ -6,9 +6,7 @@ function showWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
 
-  celsiusTemperature = response.data.temperature.current;
-
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
