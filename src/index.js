@@ -78,3 +78,7 @@ function search(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
+
+// default search
+
+search("London");
