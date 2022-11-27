@@ -1,3 +1,16 @@
+// forecast
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+}
+
+function getForecast(coordinates) {
+  let apiKey = "1d34bfa5f4ff2d22f684fo0ete4b9039";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // weather
 
 function showWeather(response) {
@@ -10,6 +23,8 @@ function showWeather(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  getForecast(response.data.coordinates);
 }
 
 // date
