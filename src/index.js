@@ -3,12 +3,17 @@
 function showWeather(response) {
   let h1 = document.querySelector("h1");
   let temperatureElement = document.querySelector("#current-temp");
-  let h2 = document.querySelector("h2");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
 
   celsiusTemperature = response.data.temperature.current;
 
   h1.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 // date
