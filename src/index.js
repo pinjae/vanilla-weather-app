@@ -17,18 +17,16 @@ function showWeather(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#degrees");
   let descriptionElement = document.querySelector("#description");
-  let maxElement = document.querySelector("#high");
+  let feelsLikeElement = document.querySelector("#feels");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
 
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   descriptionElement.innerHTML = response.data.condition.description;
-  maxElement.innerHTML = response.data.daily.temperature.maximum;
+  feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-
-  getForecast(response.data.coordinates);
 }
 
 // date
