@@ -130,4 +130,5 @@ form {
 .small {
   font-size: 28px;
   position: relative;
+  padding-top: 10px;
 }
