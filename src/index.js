@@ -43,6 +43,14 @@ function showFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#degrees");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 let celsiusTemperature = null;
 
 function handleSubmit(event) {
@@ -53,6 +61,9 @@ function handleSubmit(event) {
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 // date
 
