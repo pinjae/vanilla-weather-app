@@ -22,6 +22,36 @@ function showWeather(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
+// search
+
+function search(city) {
+  let apiKey = "1d34bfa5f4ff2d22f684fo0ete4b9039";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+// unit conversion
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
 // date
 
 let now = new Date();
@@ -67,20 +97,6 @@ let months = [
 let month = months[now.getMonth()];
 
 h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
-
-// search
-
-function search(city) {
-  let apiKey = "1d34bfa5f4ff2d22f684fo0ete4b9039";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
-}
 
 // form
 
