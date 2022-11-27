@@ -24,7 +24,7 @@ function showWeather(response) {
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   descriptionElement.innerHTML = response.data.condition.description;
-  maxElement.innerHTML = response.data.daily[0].temperature.maximum;
+  maxElement.innerHTML = response.data.daily.temperature.maximum;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
