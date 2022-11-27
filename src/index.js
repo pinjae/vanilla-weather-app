@@ -20,6 +20,7 @@ function showWeather(response) {
   let feelsLikeElement = document.querySelector("#feels");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
@@ -27,6 +28,11 @@ function showWeather(response) {
   feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconElement}.png`
+  );
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 // date
