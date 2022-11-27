@@ -30,10 +30,10 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
-}
 
-let h2 = document.querySelector("h2");
-h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
+}
 
 // forecast
 
