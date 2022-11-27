@@ -1,16 +1,13 @@
 // weather
 
 function showWeather(response) {
-  let h1 = document.querySelector("h1");
   let temperatureElement = document.querySelector("#current-temp");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.temperature.current;
 
-  h1.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
