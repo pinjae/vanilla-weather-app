@@ -32,6 +32,7 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+let h2 = document.querySelector("h2");
 h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
 // forecast
