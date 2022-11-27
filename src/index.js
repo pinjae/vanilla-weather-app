@@ -52,8 +52,6 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.time * 1000);
-
-  getForecast(response.data.coord);
 }
 
 // search
