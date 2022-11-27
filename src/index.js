@@ -70,12 +70,16 @@ h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
 // search
 
-function search(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
+function search(city) {
   let apiKey = "1d34bfa5f4ff2d22f684fo0ete4b9039";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput.value}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
 }
 
 // form
