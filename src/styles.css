@@ -90,6 +90,12 @@ form {
   padding-top: 30px;
 }
 
+.current-temperature img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+
 .current-details {
   padding-top: 15px;
 }
