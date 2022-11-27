@@ -85,7 +85,7 @@ function handleSubmit(event) {
 // form
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 
 // default search
 
