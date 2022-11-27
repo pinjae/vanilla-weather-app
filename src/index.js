@@ -32,6 +32,8 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
+
 // forecast
 
 // temperature
