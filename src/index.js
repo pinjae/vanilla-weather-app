@@ -6,6 +6,7 @@ function showWeather(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.temperature.current;
 
@@ -14,6 +15,11 @@ function showWeather(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png`
+  );
+  iconElement.setAttribute("alt", response.data.condition.icon);
 }
 
 // date
