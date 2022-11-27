@@ -1,0 +1,113 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(
+    circle at 3.1% 8.2%,
+    rgb(248, 250, 107) 0%,
+    rgb(238, 148, 148) 98.2%
+  );
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+form {
+  float: left;
+  margin-right: 3px;
+}
+
+.btn {
+  background: rgb(238, 148, 148);
+  border: rgb(238, 148, 148);
+  padding: 3px 12px 3px 12px;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  background: rgb(192, 119, 119);
+}
+
+.btn-secondary {
+  background: rgb(192, 119, 119);
+  border: rgb(192, 119, 119);
+  padding: 3px 12px 3px 12px;
+  border-radius: 6px;
+  margin-top: 1px;
+}
+
+.btn-secondary:hover {
+  background: rgb(154, 94, 94);
+}
+
+.container {
+  padding: 90px 120px;
+}
+
+.card {
+  border: none;
+  border-radius: 6px;
+  background: #fefffa;
+}
+
+.card-body {
+  padding: 30px 40px;
+}
+
+.favorites {
+  padding-bottom: 20px;
+}
+
+.city {
+  padding-right: 40px;
+}
+
+.current {
+  padding: 30px 0px 60px 0px;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.description:first-letter {
+  text-transform: capitalize;
+}
+
+.current-temperature {
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+.current-details {
+  padding-top: 15px;
+}
+
+.future {
+  text-align: center;
+}
+
+.weekday {
+  font-weight: bold;
+}
+
+.emoji {
+  font-size: 28px;
+}
+
+.small {
+  font-size: 20px;
+  position: relative;
+  top: -15px;
+}
