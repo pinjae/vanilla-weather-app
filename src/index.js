@@ -12,8 +12,8 @@ function search(event) {
   h1.innerHTML = `${cityInput.value}`;
   let apiKey = "1d34bfa5f4ff2d22f684fo0ete4b9039";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput.value}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl);
+  axios.get(apiUrl).then(showWeather);
 }
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", search);
