@@ -44,23 +44,24 @@
             <p class="description" id="description"></p>
             <div class="row">
               <div class="col-6">
-                <div class="box current-temperature">
+                <div class="current-temperature">
                   <img
                     src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
-                    alt="Clear"
+                    alt="clear"
                     id="icon"
                   />
-                  <div class="float-left">
-                    <strong id="temperature"></strong
-                    ><span class="units"> °C</span>
-                  </div>
+                  <span id="degrees"></span>
+                  <span class="units"
+                    ><a id="celcius" href>°C</a> |
+                    <a id="fahrenheit" href>°F</a></span
+                  >
                 </div>
               </div>
               <div class="col-6 current-details">
-                <div>High: <span id="high">14</span> °C</div>
-                <div>Low: <span id="low">9</span> °C</div>
-                <div>Humidity: <span id="humidity">0</span>%</div>
-                <div>Wind: <span id="wind">8</span> km/h</div>
+                <div>High: <span id="high"></span> °C</div>
+                <div>Low: <span id="low"></span> °C</div>
+                <div>Humidity: <span id="humidity"></span>%</div>
+                <div>Wind: <span id="wind"></span> km/h</div>
               </div>
             </div>
           </section>

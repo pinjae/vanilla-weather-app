@@ -96,10 +96,6 @@ form {
   width: 80px;
 }
 
-.box {
-  display: flow-root;
-}
-
 .current-temperature .units {
   position: relative;
   font-size: 16px;

@@ -1,7 +1,7 @@
 // weather
 
 function showWeather(response) {
-  let temperatureElement = document.querySelector("#current-temp");
+  let temperatureElement = document.querySelector("#degrees");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -61,6 +61,7 @@ h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 // search
 
 function search(event) {
+  event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${cityInput.value}`;
