@@ -17,9 +17,9 @@ function showWeather(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconElement}.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-  iconElement.setAttribute("alt", response.data.condition.icon);
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 // date
