@@ -1,4 +1,47 @@
-// forecast
+// format date and day
+function formatDate(timestamp) {
+  let now = new Date();
+
+  let date = now.getDate();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  if (hours < 10) {
+    hours = "0" + hours;
+  }
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+
+  return `${day}, ${month} ${date}, ${hours}:${minutes}`;
+}
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -7,6 +50,8 @@ function formatDay(timestamp) {
 
   return days[day];
 }
+
+// forecast
 
 function showForecast(response) {
   let forecast = response.data.daily;
@@ -54,6 +99,7 @@ function getForecast(coordinates) {
 
 function showWeather(response) {
   let cityElement = document.querySelector("#city");
+  let dateElement = document.querySelector("#date");
   let temperatureElement = document.querySelector("#degrees");
   let descriptionElement = document.querySelector("#description");
   let feelsLikeElement = document.querySelector("#feels");
@@ -64,6 +110,7 @@ function showWeather(response) {
   celsiusTemperature = response.data.temperature.current;
 
   cityElement.innerHTML = response.data.city;
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = response.data.condition.description;
   feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
@@ -105,16 +152,6 @@ function search(city) {
   axios.get(apiUrl).then(showWeather);
 }
 
-// unit conversion
-
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#degrees");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 // city input
 
 function handleSubmit(event) {
@@ -122,55 +159,6 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
-
-// date
-
-let now = new Date();
-
-let h2 = document.querySelector("h2");
-
-let date = now.getDate();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-
-if (hours < 10) {
-  hours = "0" + hours;
-}
-if (minutes < 10) {
-  minutes = "0" + minutes;
-}
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-
-h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
 // form
 
