@@ -22,6 +22,11 @@ p {
 
 a {
   text-decoration: none;
+  color: rgb(77, 94, 149);
+}
+
+a:hover {
+  color: rgb(32, 38, 57);
 }
 
 form {
@@ -29,41 +34,49 @@ form {
   margin-right: 3px;
 }
 
+.author {
+  color: #dc9b41;
+}
+
+.author:hover {
+  color: #bf8739;
+}
+
 .btn {
-  background: rgb(238, 148, 148);
-  border: rgb(238, 148, 148);
+  background: rgb(63, 76, 119);
+  border: rgb(63, 76, 119);
   padding: 3px 12px 3px 12px;
   border-radius: 6px;
 }
 
 .btn:hover {
-  background: rgb(192, 119, 119);
+  background: rgb(32, 38, 57);
 }
 
 .btn-secondary {
-  background: rgb(192, 119, 119);
-  border: rgb(192, 119, 119);
+  background: #dc9b41;
+  border: #dc9b41;
   padding: 3px 12px 3px 12px;
   border-radius: 6px;
   margin-top: 1px;
 }
 
 .btn-secondary:hover {
-  background: rgb(154, 94, 94);
+  background: #bf8739;
 }
 
 .container {
-  padding: 90px 120px;
+  padding: 60px 160px;
 }
 
 .card {
   border: none;
   border-radius: 6px;
-  background: #fefffa;
+  background: #fcfcfc;
 }
 
 .card-body {
-  padding: 30px 40px;
+  padding: 40px 40px;
 }
 
 .favorites {
