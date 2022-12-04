@@ -1,4 +1,56 @@
+// forecast
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function showForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index >= 1) {
+      forecastHTML =
+        forecastHTML +
+        `
+              <div class="col-2">
+                <div class="forecast-day">${formatDay(forecastDay.time)}</div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    forecastDay.condition.icon
+                  }.png"
+                  alt=""
+                  width="42"
+                />
+                <div class="forecast-temperatures">
+                  <div class="forecast-temperature-max">H: ${Math.round(
+                    forecastDay.temperature.maximum
+                  )}°</div>
+                  <div class="forecast-temperature-min">L: ${Math.round(
+                    forecastDay.temperature.minimum
+                  )}°</div>
+                </div>
+              </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // weather
+
+function getForecast(coordinates) {
+  let apiKey = "1d34bfa5f4ff2d22f684fo0ete4b9039";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
 
 function showWeather(response) {
   let cityElement = document.querySelector("#city");
@@ -22,6 +74,8 @@ function showWeather(response) {
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.coordinates);
 }
 
 // search
@@ -52,6 +106,8 @@ function showCelsiusTemperature(event) {
 }
 
 let celsiusTemperature = null;
+
+// city input
 
 function handleSubmit(event) {
   event.preventDefault();
