@@ -1,9 +1,9 @@
 body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(
-    circle at 3.1% 8.2%,
-    rgb(248, 250, 107) 0%,
-    rgb(238, 148, 148) 98.2%
+  background: linear-gradient(
+    112.1deg,
+    rgb(32, 38, 57) 11.4%,
+    rgb(63, 76, 119) 70.2%
   );
 }
 
@@ -17,6 +17,7 @@ h2 {
 
 p {
   margin-top: 5px;
+  color: white;
 }
 
 a {
