@@ -102,15 +102,6 @@ form {
   top: -15px;
 }
 
-.current-temperature .active {
-  color: black;
-  cursor: default;
-}
-
-.current-temperature .active:hover {
-  text-decoration: none;
-}
-
 .current-details {
   padding-top: 30px;
 }
